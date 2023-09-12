@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes</title>
+    <style>
+        h1+p {
+            /* adjacent sibling selector aplica a cor apenas para o <p> imediatamente posterior ao h1*/
+            color: darkgreen;
+        }
+        .heading {
+            color: navy;
+            transition: all 300ms ease-in-out;
+        }
+        .heading:hover {
+            background-color: brown;
+            color: white;
+        }
+        .primeiroP::first-letter {
+            /*o pseudo-elemento vem após os "::" */
+            font-size: 100px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        a:link {
+            /*cor dos links NUNCA visitados */
+            color: red;
+        }
+        a:hover {
+            /*pseudo-clase que é modificada quando o mouse passa por cima */
+            color: white;
+            background-color: black;
+        }
+        a:visited {
+            /*cor dos links VISITADOS */
+            color: deeppink;
+        }
+        a:active {
+            /*indica o momento do click */
+            background-color: darkgoldenrod;
+            color: black;
+        }
+        input:focus {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            outline: none;
+            border: 1px solid black;
+        }
+        input:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+            color: white;
+        }
+        #inputD::placeholder {
+            color: red;
+        }
+        input:checked {
+            width: 50px;
+            height: 50px;
+        }
+        input:checked+h1 { /*adjacent sibling selector */            
+            background-color: black;
+            color: white;
+        }
+        .pai .lista li:first-child {
+            background-color: red;
+        }
+        .pai .lista li:last-child {
+            background-color: darkorange;
+        }
+        .pai .lista ~ ol { /* general sibling selector */
+            background-color: darkgreen;
+            color: white
+        }
+        .pai .lista2 li:last-child {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text"><br>
+    <br>
+    <input type="text" placeholder="desabilitado" id="inputD" disabled><br>
+    <br>
+    <input type="text" required placeholder="REQUERIDO"><br>
+    <input type="checkbox">
+    <input type="checkbox">Mudar título do texto abaixo.
+    <h1 class="heading">Lorem ipsum dolor sit amet.</h1>
+    <p class="primeiroP">Lorem ipsum dolor <a href="#">amet consectetur</a> adipisicing elit. Unde cupiditate voluptates
+        amet voluptas soluta impedit veniam qui dolor pariatur reprehenderit quas tempora aliquid placeat, <a
+            href="nuncafuivisitado">expedita facilis</a>a eligendi corporis iure cum. Tempora error amet nostrum
+        nesciunt fugit, ipsum expedita, architecto fuga id reiciendis consequatur a magni praesentium neque hic
+        asperiores repellendus! Quaerat, fugit vitae! Nulla non blanditiis aperiam culpa ipsam error nam praesentium
+        tenetur recusandae dignissimos soluta consectetur molestias quo aliquam nihil aliquid perspiciatis, voluptas
+        totam eius a. Beatae sapiente minima animi assumenda ipsam autem quod, minus commodi perspiciatis odit! Esse ad
+        fugiat voluptatum doloribus reprehenderit voluptates quis beatae. Iure consectetur accusantium expedita quidem
+        commodi! Asperiores itaque eaque, quos ut quasi id quae numquam, inventore quo praesentium optio voluptates
+        expedita dolorem, beatae adipisci nobis illo ex possimus architecto vel reiciendis dolore sed dignissimos!
+        Similique rem deleniti optio distinctio, obcaecati molestiae blanditiis ullam sit repudiandae expedita, neque
+        explicabo rerum officia, quasi ut vitae! Facilis quaerat libero omnis voluptas dolores, placeat labore doloribus
+        illum dolorem molestias officiis nostrum consectetur sed voluptatem debitis quos temporibus ex optio eveniet
+        magnam et? Doloremque veritatis iusto dolorum quidem quibusdam nam possimus? Inventore quibusdam asperiores hic
+        magni obcaecati iste, expedita possimus incidunt placeat, necessitatibus maxime eius et provident?</p>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi hic voluptate voluptatum assumenda optio
+        perspiciatis, veniam in laborum id enim aut eveniet odio vero doloribus consectetur sint quis praesentium
+        aperiam labore ducimus iusto itaque obcaecati? Laborum molestias optio tenetur nisi aspernatur ea eos ducimus
+        harum. Quibusdam expedita facilis in inventore.</p>
+    <div class="pai">
+        
+        <ul class="lista">
+            <li>Item 01</li>
+            <li>Item 02</li>
+            <li>Item 03</li>
+            <li>Item 04</li>
+        </ul>
+
+        <ol class="lista2">
+            <li>item01</li>
+            <li>item02</li>
+            <li>item03</li>
+            <li>item04</li>
+        </ol>
+    </div>
+
+</body>
+
+</html>
